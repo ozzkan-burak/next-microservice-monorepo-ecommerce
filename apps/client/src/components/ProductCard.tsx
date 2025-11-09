@@ -10,8 +10,8 @@ import { toast } from "react-toastify";
 
 const ProductCard = ({ product }: { product: ProductType }) => {
   const [productTypes, setProductTypes] = useState({
-    size: product.sizes[0],
-    color: product.colors[0],
+    size: product.sizes?.[0] || '',
+    color: product.colors?.[0] || '',
   });
 
   const { addToCart } = useCartStore();
@@ -45,7 +45,7 @@ const ProductCard = ({ product }: { product: ProductType }) => {
       <Link href={`/products/${product.id}`}>
         <div className="relative aspect-[2/3]">
           <Image
-            src={product.images[productTypes.color]}
+            src={product.images[productTypes.color] || Object.values(product.images)[0] || '/placeholder.jpg'}
             alt={product.name}
             fill
             className="object-cover hover:scale-105 transition-all duration-300"
