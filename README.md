@@ -38,3 +38,24 @@ This project follows a modular "Apps & Packages" structure:
 │   ├── ts-config       # Shared TypeScript Configurations
 │   ├── utils           # Shared Helpers (Date formatting, Currency, Validation)
 │   └── types           # Shared Domain Interfaces (Product, User, Cart)
+
+### 🛠️ Tech Stack & Tooling
+
+| Domain | Technology | Usage |
+| :--- | :--- | :--- |
+| **Monorepo Tool** | **Turborepo** | High-performance build system & orchestration |
+| **Framework** | **Next.js 14** | Core Application Framework (App Router / RSC) |
+| **Styling** | **Tailwind CSS** | Utility-first styling for consistent Design System |
+| **Package Manager** | **pnpm** | Efficient, disk-space saving dependency management |
+| **Component Lib** | **Radix UI** | Accessible primitives for the Shared UI Kit |
+
+---
+
+### 🚧 Roadmap & Active R&D
+Since this is an active architecture lab, the following modules are currently under evaluation and development:
+
+* [ ] **State Management Strategy:** Evaluating **Zustand vs Redux Toolkit** for complex client-side state needs (Cart, Filters). Currently relying on Server State and React Context.
+* [ ] **Authentication:** Implementing NextAuth.js with JWT rotation and HttpOnly Cookie strategies.
+* [ ] **Micro-Frontends:** Investigating Module Federation strategies for the Admin Panel.
+* [ ] **CI/CD Pipelines:** Setting up GitHub Actions for selective builds (building only changed apps to save resources).
+* [ ] **Testing Strategy:** Implementing Playwright for E2E testing across multiple apps.
